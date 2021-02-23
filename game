@@ -1,0 +1,71 @@
+#include <iostream>
+#include <cstdlib>
+
+
+using namespace std;
+
+bool gameover;
+const int width = 40; //размер карты (ширина)
+const int height = 30; //размер картыы (высота)
+
+
+//Старт игры, настройка параметров
+void start()
+{
+  gameover = false;
+}
+
+//Функция рисует карту
+void map_draw()
+{
+
+  for (int i = 0; i < width + 1; i++) //вверхняя граница
+  {
+    cout << "#";
+  }
+  cout << endl;
+
+  for (int i = 0; i < width + 1; i++) //нижняя граница
+  {
+    cout << "#";
+  }
+  cout << endl;
+  
+  for(int i = 0; i < height; i++) // левая и правая граница
+  {
+    for (int j = 0; j < width; j++)
+    {
+      if (j == 0 || j == width - 1)
+      {
+        cout << "#";
+      }
+      cout << " ";
+    }
+    cout << endl;
+  }
+}
+
+//Нажатия пользователя
+void keys()
+{
+
+}
+
+//Логика игры
+void AI()
+{
+
+}
+
+int main() 
+{
+  start();
+  while(!gameover)
+  {
+    keys();
+    AI();
+    map_draw();
+  }
+
+  return 0;
+}
